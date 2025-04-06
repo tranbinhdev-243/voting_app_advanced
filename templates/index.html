@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bình chọn Blockchain</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <h1>Chào mừng đến hệ thống bình chọn</h1>
+  {% if logged_in %}
+    <p>Xin chào, {{ session.username }} | <a href="/logout">Đăng xuất</a></p>
+    <a href="/vote">Tham gia bình chọn</a>
+  {% else %}
+    <a href="/login">Đăng nhập để bình chọn</a>
+  {% endif %}
+  <a href="/results">Xem kết quả</a>
+  <a href="/status">Kiểm tra tính hợp lệ</a>
+</body>
+</html>

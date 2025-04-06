@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kết quả</title>
+</head>
+<body>
+  <h2>Kết quả bình chọn</h2>
+  <ul>
+    {% for name, count in results.items() %}
+      <li>{{ name }}: {{ count }} phiếu</li>
+    {% endfor %}
+  </ul>
+  <a href="/">Quay lại</a>
+</body>
+</html>

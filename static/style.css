@@ -1,0 +1,10 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 30px;
+    background: #f2f2f2;
+}
+a {
+    display: block;
+    margin: 10px 0;
+    color: blue;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bình chọn</title>
+</head>
+<body>
+  <h2>Bình chọn</h2>
+  {% if step == 'form' %}
+    <form method="POST" action="/submit_vote">
+      Chọn ứng viên:
+      <select name="candidate">
+        <option value="A">Ứng viên A</option>
+        <option value="B">Ứng viên B</option>
+        <option value="C">Ứng viên C</option>
+      </select><br>
+      <button type="submit">Lấy mã OTP</button>
+    </form>
+  {% elif step == 'otp' %}
+    {% if error %}<p style="color:red">{{ error }}</p>{% endif %}
+    <p>Mã OTP (giả lập): <b>{{ otp or 'Đã gửi!' }}</b></p>
+    <form method="POST">
+      Nhập mã OTP: <input type="text" name="otp_input" required>
+      <button type="submit">Xác nhận</button>
+    </form>
+  {% elif step == 'done' %}
+    <p>{{ 'Bình chọn thành công!' if success else 'Bạn đã bình chọn rồi!' }}</p>
+    <a href="/">Về trang chủ</a>
+  {% endif %}
+</body>
+</html>
